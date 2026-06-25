@@ -4,7 +4,7 @@ import { ArrowRight, Mail, Sparkles } from 'lucide-react';
 import { translations } from '../translations';
 
 export default function Hero({ language }: { language: 'es' | 'en' }) {
-  const [imgSrc, setImgSrc] = useState('/Perfil 2025.png');
+  const [imgSrc, setImgSrc] = useState(`${import.meta.env.BASE_URL}Perfil 2025.png`);
   const t = translations[language];
   
   return (
