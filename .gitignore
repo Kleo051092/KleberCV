@@ -7,3 +7,12 @@ coverage/
 .env*
 !.env.example
 node_modules_old_32/
+
+# IDEs & Agents
+.claude/
+.gemini/
+
+# Personal coaching / evaluation files
+*Kleber_Villalobos*
+*.docx
+*.pdf
