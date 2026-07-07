@@ -7,6 +7,9 @@ export default defineConfig(() => {
   return {
     base: '/KleberCV/',
     plugins: [react(), tailwindcss()],
+    build: {
+      target: 'chrome79'
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

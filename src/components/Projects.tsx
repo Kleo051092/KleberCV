@@ -89,6 +89,23 @@ export default function Projects({ language }: { language: 'es' | 'en' }) {
                 </span>
               </div>
 
+              {/* Business Impact KPIs */}
+              <div className="grid grid-cols-2 gap-4 pb-6 border-b border-slate-900">
+                {projectData.metrics.map((metric) => (
+                  <div key={metric.label} className="p-3.5 rounded-xl bg-slate-900/30 border border-slate-900 hover:border-slate-800/50 transition-colors">
+                    <div className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-1 line-clamp-1">
+                      {metric.label}
+                    </div>
+                    <div className="text-lg md:text-xl font-bold font-display text-white flex items-baseline gap-1.5">
+                      {metric.value}
+                      {metric.improved && (
+                        <span className="text-[10px] font-mono text-brand-green font-semibold">↑ Ok</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               {/* Title & Description */}
               <div className="space-y-3">
                 <h4 className="text-2xl font-bold font-display text-white">
@@ -113,23 +130,6 @@ export default function Projects({ language }: { language: 'es' | 'en' }) {
                   ))}
                 </div>
               </div>
-            </div>
-
-            {/* Business Impact KPIs */}
-            <div className="pt-8 border-t border-slate-900 grid grid-cols-2 gap-4 mt-8">
-              {projectData.metrics.map((metric) => (
-                <div key={metric.label} className="p-3.5 rounded-xl bg-slate-900/30 border border-slate-900 hover:border-slate-800/50 transition-colors">
-                  <div className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-1 line-clamp-1">
-                    {metric.label}
-                  </div>
-                  <div className="text-lg md:text-xl font-bold font-display text-white flex items-baseline gap-1.5">
-                    {metric.value}
-                    {metric.improved && (
-                      <span className="text-[10px] font-mono text-brand-green font-semibold">↑ Ok</span>
-                    )}
-                  </div>
-                </div>
-              ))}
             </div>
           </motion.div>
 

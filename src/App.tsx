@@ -14,12 +14,14 @@ import {
   Briefcase, 
   GraduationCap, 
   Menu, 
-  X 
+  X,
+  Mail,
+  Download
 } from 'lucide-react';
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState<'es' | 'en'>('es');
+  const [language, setLanguage] = useState<'es' | 'en'>('en');
   const [currentPage, setCurrentPage] = useState<'profile' | 'projects' | 'experience' | 'education'>(() => {
     const hash = window.location.hash;
     if (hash === '#/proyectos') return 'projects';

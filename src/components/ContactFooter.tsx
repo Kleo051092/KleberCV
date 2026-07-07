@@ -93,7 +93,7 @@ export default function ContactFooter({ language }: { language: 'es' | 'en' }) {
                 <div>
                   <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">{language === 'es' ? 'Email Corporativo' : 'Corporate Email'}</div>
                   <a href="mailto:kleberucr@gmail.com" className="text-sm font-semibold text-slate-200 hover:text-brand-green transition-colors">
-                    kleberucr@gmail.com
+                    {language === 'es' ? 'Enviar Email' : 'Send Email'}
                   </a>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function ContactFooter({ language }: { language: 'es' | 'en' }) {
                     rel="noreferrer" 
                     className="text-sm font-bold text-slate-100 hover:text-emerald-400 transition-colors flex items-center gap-1"
                   >
-                    +506 6142-8303
+                    {language === 'es' ? 'Enviar Mensaje' : 'Send Message'}
                   </a>
                 </div>
               </div>

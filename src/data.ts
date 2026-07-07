@@ -52,7 +52,7 @@ export const projectDataEs: Project = {
     { label: 'Tiempo de Cierre Mensual', value: '-60.0%', improved: true },
     { label: 'Tiempo de Respuesta', value: '-40.0%', improved: true },
     { label: 'Inconsistencias de Registros', value: '-45.0%', improved: true },
-    { label: 'Volumen Registros Analizados', value: '300K+', improved: true }
+    { label: 'Volumen Registros Analizados', value: '1300K+', improved: true }
   ]
 };
 
@@ -75,7 +75,7 @@ export const projectsDataListEs: Project[] = [
     id: 'torre-control',
     title: 'Torre de Control: Monitoreo Diario de Indicadores',
     description: 'Sistema automatizado que extrae diariamente indicadores macroeconómicos del webservice del BCCR y los cruza con métricas internas de riesgo de liquidez (ICL, Ltd, calce de plazos, mora legal).',
-    longDescription: 'Sistema de monitoreo financiero automatizado mediante el uso de Python, que integra de manera robusta la extracción automática de variables macroeconómicas del Banco Central de Costa Rica (BCCR) tales como TBP, tipo de cambio y TPM, cruzándola directamente con métricas internas de riesgo. Monitorea proactivamente la mora legal, mora > 90 días, ratios de liquidez y calce de plazos. Consiste en transformar procesos manuales heredados en una "Torre de Control" de alta precisión analítica, permitiendo a la alta gerencia anticipar fluctuaciones del mercado, tomar decisiones informadas y cumplir con el marco regulatorio diario de la SUGEF (SUGEF 2-10).',
+    longDescription: 'SITUACIÓN: El análisis de riesgo y monitoreo de liquidez dependía de extracción manual de datos macroeconómicos, limitando la proactividad institucional y consumiendo tiempo crítico. TAREA: Desarrollar un sistema unificado para cumplir con la normativa SUGEF 2-10 de forma automatizada. ACCIÓN: Construí una "Torre de Control" en Python que integra mediante APIs variables del BCCR y las cruza en tiempo real con bases de datos internas SQL. RESULTADO: Reducción del 60% en el tiempo de cierre mensual, eliminación de errores manuales y anticipación proactiva a las fluctuaciones del mercado.',
     category: 'finance',
     tags: ['Python', 'Webservice BCCR', 'SQL Server', 'SUGEF 2-10', 'Riesgo Financiero', 'Alertas Tempranas', 'Métricas de Liquidez'],
     metrics: [
@@ -102,12 +102,12 @@ export const projectsDataListEs: Project[] = [
   {
     id: 'distribucion-mercado',
     title: 'Dashboard de Distribución de Mercado (Suzuki CR)',
-    description: 'Herramienta analítica para procesar más de 300K+ registros de ventas, analizando distribución geográfica, edad, sexo y modelo de producto.',
-    longDescription: 'Herramienta diseñada para el análisis de distribución y penetración de mercado a gran escala, procesando más de 300,000 registros sintetizados del sector automotriz. El tablero integra variables demográficas como rango de edad, sexo y región de origen con variables comerciales como producto (modelos insignia como la motocicleta Suzuki GIXXER-150), mes de compra, campaña publicitaria de procedencia y origen de la venta (feria, walking, virtual). Permite optimizar el ROI de campañas de publicidad digital y segmentar con precisión quirúrgica el mercado de colocación.',
+    description: 'Herramienta analítica para procesar más de 1300K+ registros de ventas, analizando distribución geográfica, edad, sexo y modelo de producto.',
+    longDescription: 'SITUACIÓN: Necesidad de analizar a gran escala la penetración de mercado del sector automotriz. TAREA: Crear una herramienta para optimizar el ROI de campañas digitales y segmentar el mercado de colocación. ACCIÓN: Diseñé un dashboard interactivo que integra variables demográficas (edad, sexo, región) con variables comerciales (producto, mes, campaña) procesando más de 1300K+ registros sintetizados. RESULTADO: Optimización de campañas digitales, trazabilidad completa de mercado y reducción de inconsistencias en la data.',
     category: 'market',
-    tags: ['Power BI', '300K+ Registros', 'Segmentación Demográfica', 'Suzuki CR', 'Análisis Geográfico', 'Canales de Venta'],
+    tags: ['Power BI', '1300K+ Registros', 'Segmentación Demográfica', 'Suzuki CR', 'Análisis Geográfico', 'Canales de Venta'],
     metrics: [
-      { label: 'Registros Procesados', value: '300K+', improved: true },
+      { label: 'Registros Procesados', value: '1300K+', improved: true },
       { label: 'Inconsistencias de Datos', value: '-45.0%', improved: true },
       { label: 'Segmentación de Mercado', value: 'Multidimensional', improved: true },
       { label: 'Trazabilidad de Campaña', value: 'Completa', improved: true }
@@ -164,7 +164,7 @@ export const timelineDataEs: TimelineItem[] = [
     period: 'Ene 2018 – Feb 2023',
     description: 'Especialista a cargo del modelado predictivo, forecasting de ventas e inteligencia competitiva sectorial.',
     impactPoints: [
-      'Diseñé e implementé dashboards de KPIs de ventas y postventa en Power BI analizando más de 300K+ registros de ventas con segmentación multidimensional avanzada.',
+      'Diseñé e implementé dashboards de KPIs de ventas y postventa en Power BI analizando más de 1300K+ registros de ventas con segmentación multidimensional avanzada.',
       'Desarrollé herramienta de forecasting de ventas en Power BI con análisis estadístico de comportamiento histórico por ciclo, entregando proyecciones con intervalos de confianza.',
       'Implementé estrategias integrales de gobierno de datos en sistemas CRM, SACS y ERP, logrando estandarización de registros maestros y reducción de inconsistencias en un ~45%.',
       'Conduje análisis competitivo de mercado de motos (sell-out por unidades y montos, 2020-2022) comparando 12 categorías de producto.'
@@ -358,7 +358,7 @@ export const projectDataEn: Project = {
     { label: 'Monthly Closing Time', value: '-60.0%', improved: true },
     { label: 'Response Time', value: '-40.0%', improved: true },
     { label: 'Record Inconsistencies', value: '-45.0%', improved: true },
-    { label: 'Analyzed Records Volume', value: '300K+', improved: true }
+    { label: 'Analyzed Records Volume', value: '1300K+', improved: true }
   ]
 };
 
@@ -381,7 +381,7 @@ export const projectsDataListEn: Project[] = [
     id: 'torre-control',
     title: 'Control Tower: Daily Indicator Monitoring',
     description: 'Automated system that daily extracts macroeconomic indicators from the BCCR webservice and crosses them with internal liquidity risk metrics (ICL, Ltd, maturity matching, legal delinquency).',
-    longDescription: 'Automated financial monitoring system using Python, which robustly integrates the automatic extraction of macroeconomic variables from the Central Bank of Costa Rica (BCCR) such as TBP, exchange rate, and TPM, crossing it directly with internal risk metrics. It proactively monitors legal delinquency, delinquency > 90 days, liquidity ratios, and maturity matching. It consists of transforming legacy manual processes into a high-precision analytical "Control Tower", allowing senior management to anticipate market fluctuations, make informed decisions, and comply with the daily regulatory framework of SUGEF (SUGEF 2-10).',
+    longDescription: 'SITUATION: Risk analysis and liquidity monitoring relied on manual macroeconomic data extraction, limiting institutional proactivity. TASK: Develop a unified system to automatically comply with SUGEF 2-10 regulations. ACTION: Built a "Control Tower" in Python that integrates BCCR variables via APIs and crosses them in real-time with internal SQL databases. RESULT: 60% reduction in monthly closing time, elimination of manual errors, and proactive anticipation of market fluctuations.',
     category: 'finance',
     tags: ['Python', 'BCCR Webservice', 'SQL Server', 'SUGEF 2-10', 'Financial Risk', 'Early Warnings', 'Liquidity Metrics'],
     metrics: [
@@ -408,12 +408,12 @@ export const projectsDataListEn: Project[] = [
   {
     id: 'distribucion-mercado',
     title: 'Market Distribution Dashboard (Suzuki CR)',
-    description: 'Analytical tool to process over 300K+ sales records, analyzing geographic distribution, age, sex, and product model.',
-    longDescription: 'Tool designed for large-scale market distribution and penetration analysis, processing over 300,000 synthesized records from the automotive sector. The dashboard integrates demographic variables such as age range, sex, and region of origin with commercial variables such as product (flagship models like the Suzuki GIXXER-150 motorcycle), month of purchase, originating advertising campaign, and source of sale (fair, walking, virtual). It allows optimizing the ROI of digital advertising campaigns and segmenting the placement market with surgical precision.',
+    description: 'Analytical tool to process over 1300K+ sales records, analyzing geographic distribution, age, sex, and product model.',
+    longDescription: 'SITUATION: Need to analyze large-scale market penetration for the automotive sector. TASK: Create a tool to optimize the ROI of digital campaigns and segment the placement market. ACTION: Designed an interactive dashboard integrating demographic variables (age, sex, region) with commercial variables (product, month, campaign) processing over 1300K+ synthesized records. RESULT: Optimized digital campaigns, full market traceability, and reduction of data inconsistencies.',
     category: 'market',
-    tags: ['Power BI', '300K+ Records', 'Demographic Segmentation', 'Suzuki CR', 'Geographic Analysis', 'Sales Channels'],
+    tags: ['Power BI', '1300K+ Records', 'Demographic Segmentation', 'Suzuki CR', 'Geographic Analysis', 'Sales Channels'],
     metrics: [
-      { label: 'Processed Records', value: '300K+', improved: true },
+      { label: 'Processed Records', value: '1300K+', improved: true },
       { label: 'Data Inconsistencies', value: '-45.0%', improved: true },
       { label: 'Market Segmentation', value: 'Multidimensional', improved: true },
       { label: 'Campaign Traceability', value: 'Complete', improved: true }
@@ -470,7 +470,7 @@ export const timelineDataEn: TimelineItem[] = [
     period: 'Jan 2018 – Feb 2023',
     description: 'Specialist in charge of predictive modeling, sales forecasting, and sectorial competitive intelligence.',
     impactPoints: [
-      'Designed and implemented sales and post-sales KPI dashboards in Power BI, analyzing over 300K+ sales records with advanced multidimensional segmentation.',
+      'Designed and implemented sales and post-sales KPI dashboards in Power BI, analyzing over 1300K+ sales records with advanced multidimensional segmentation.',
       'Developed a sales forecasting tool in Power BI with statistical analysis of historical behavior by cycle, delivering projections with confidence intervals.',
       'Implemented comprehensive data governance strategies in CRM, SACS, and ERP systems, achieving standardization of master records and reducing inconsistencies by ~45%.',
       'Conducted competitive market analysis of motorcycles (sell-out by units and amounts, 2020-2022) comparing 12 product categories.'

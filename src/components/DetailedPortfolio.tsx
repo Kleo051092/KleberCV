@@ -8,7 +8,10 @@ import {
   Layers, 
   ArrowLeft,
   Filter,
-  Search
+  Search,
+  Maximize2,
+  Minimize2,
+  X
 } from 'lucide-react';
 import { translations } from '../translations';
 
@@ -19,6 +22,7 @@ export default function DetailedPortfolio({ language, onBackToProfile }: { langu
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedProjectId, setSelectedProjectId] = useState<string>(projectsDataList[0].id);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isZoomed, setIsZoomed] = useState(false);
 
   // Derive the active project based on the current ID and language
   const selectedProject = projectsDataList.find(p => p.id === selectedProjectId) || projectsDataList[0];
@@ -312,6 +316,28 @@ export default function DetailedPortfolio({ language, onBackToProfile }: { langu
                 </div>
               </div>
 
+              {/* Performance Impact Metrics Grid */}
+              <div className="space-y-3 pb-6 border-b border-slate-900">
+                <h4 className="text-xs font-mono uppercase tracking-widest text-slate-500">
+                  {language === 'es' ? 'Impacto Cuantificable del Proyecto' : 'Quantifiable Project Impact'}
+                </h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {selectedProject.metrics.map(metric => (
+                    <div key={metric.label} className="p-4 rounded-xl bg-slate-900/30 border border-slate-900 flex flex-col justify-between">
+                      <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-2 leading-tight">
+                        {metric.label}
+                      </span>
+                      <span className="text-base font-bold text-white font-display flex items-center gap-1">
+                        {metric.value}
+                        {metric.improved && (
+                          <span className="text-[10px] text-brand-green">✓</span>
+                        )}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Long Description */}
               <div className="space-y-3">
                 <h4 className="text-xs font-mono uppercase tracking-widest text-slate-500">
@@ -323,22 +349,32 @@ export default function DetailedPortfolio({ language, onBackToProfile }: { langu
               </div>
 
               {/* Custom High-Fidelity Interactive Layout (Simulating the PDF content directly!) */}
-              <div className="border border-slate-900 rounded-2xl bg-slate-950 p-5 space-y-6 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-blue/5 rounded-full blur-2xl pointer-events-none" />
-                
-                <div className="flex items-center justify-between pb-3 border-b border-slate-900">
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-                    <Layers className="w-4 h-4 text-brand-green" />
-                    {selectedProject.id === 'dashboard-resultados' ? t.detSectionInteractiveReport :
-                     selectedProject.id === 'torre-control' ? t.detSectionMacroMonit :
-                     selectedProject.id === 'distribucion-mercado' ? t.detSectionMarketSuzuki :
-                     selectedProject.id === 'analisis-competencia' ? t.detSectionMarketCompet :
-                     t.detSectionPredictiveVentas}
-                  </span>
-                  <span className="text-[9px] font-mono text-slate-500">
-                    *{language === 'es' ? 'Muestra interactiva con fines demostrativos' : 'Interactive view for demonstration purposes'}
-                  </span>
-                </div>
+              <div className={`transition-all duration-300 ${isZoomed ? 'fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12 bg-slate-950/90 backdrop-blur-sm' : ''}`}>
+                <div className={`border border-slate-900 rounded-2xl bg-slate-950 p-5 space-y-6 relative overflow-hidden w-full ${isZoomed ? 'max-w-7xl max-h-[90vh] overflow-y-auto shadow-2xl shadow-brand-blue/10' : ''}`}>
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-brand-blue/5 rounded-full blur-2xl pointer-events-none" />
+                  
+                  <div className="flex items-center justify-between pb-3 border-b border-slate-900">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                      <Layers className="w-4 h-4 text-brand-green" />
+                      {selectedProject.id === 'dashboard-resultados' ? t.detSectionInteractiveReport :
+                       selectedProject.id === 'torre-control' ? t.detSectionMacroMonit :
+                       selectedProject.id === 'distribucion-mercado' ? t.detSectionMarketSuzuki :
+                       selectedProject.id === 'analisis-competencia' ? t.detSectionMarketCompet :
+                       t.detSectionPredictiveVentas}
+                    </span>
+                    <div className="flex items-center gap-4">
+                      <span className="text-[9px] font-mono text-slate-500 hidden sm:block">
+                        *{language === 'es' ? 'Muestra interactiva con fines demostrativos' : 'Interactive view for demonstration purposes'}
+                      </span>
+                      <button 
+                        onClick={() => setIsZoomed(!isZoomed)}
+                        className="p-1.5 rounded-md hover:bg-slate-900 text-slate-400 hover:text-white transition-colors"
+                        title={isZoomed ? "Minimizar" : "Ampliar / Zoom"}
+                      >
+                        {isZoomed ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+                      </button>
+                    </div>
+                  </div>
 
                 {/* PROJECT 1 VIEW: Dashboard de Resultados S&OP */}
                 {selectedProject.id === 'dashboard-resultados' && (() => {
@@ -641,28 +677,14 @@ export default function DetailedPortfolio({ language, onBackToProfile }: { langu
                 )}
 
               </div>
-
-              {/* Performance Impact Metrics Grid */}
-              <div className="space-y-3">
-                <h4 className="text-xs font-mono uppercase tracking-widest text-slate-500">
-                  {language === 'es' ? 'Impacto Cuantificable del Proyecto' : 'Quantifiable Project Impact'}
-                </h4>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {selectedProject.metrics.map(metric => (
-                    <div key={metric.label} className="p-4 rounded-xl bg-slate-900/30 border border-slate-900 flex flex-col justify-between">
-                      <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-2 leading-tight">
-                        {metric.label}
-                      </span>
-                      <span className="text-base font-bold text-white font-display flex items-center gap-1">
-                        {metric.value}
-                        {metric.improved && (
-                          <span className="text-[10px] text-brand-green">✓</span>
-                        )}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+              {isZoomed && (
+                <button onClick={() => setIsZoomed(false)} className="fixed top-4 right-4 z-[60] p-2 bg-slate-900 rounded-full border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800">
+                  <X className="w-5 h-5" />
+                </button>
+              )}
               </div>
+
+
 
             </div>
           </motion.div>

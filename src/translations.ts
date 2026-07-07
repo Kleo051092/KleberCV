@@ -26,7 +26,7 @@ export const translations = {
     heroContact: "Contactar",
     heroAvailableBadge: "Disponible para proyectos",
     heroLocation: "San José, Costa Rica",
-    heroDescriptionText: "Analista Senior de Datos y Riesgos, Economista con 8+ años transformando datos masivos en rentabilidad y control institucional. Especialista en modelos predictivos, modelos de riesgo financiero (SUGEF, Basilea) y tableros ejecutivos en Power BI y Excel. Traduzco complejidad técnica en valor de negocio medible. Profundizando en IA aplicada y lenguajes de programación a la economía y en automatización con agentes IA (UCR) y Machine Learning aplicado a la analítica de Datos.",
+    heroDescriptionText: "Combino la mente analítica de un científico de datos con el enfoque humano de un líder de equipos. Con más de 8 años en sectores financieros y comerciales, traduzco métricas complejas en estrategias de negocio claras y accionables. Valoro profundamente la integridad, la disciplina y el trabajo en equipo, lo que me permite mediar en conflictos y guiar iniciativas críticas sin perder el foco en la calidad. Actualmente profundizando en IA Aplicada en la UCR, mi objetivo es seguir liderando la innovación tecnológica con un propósito claro: generar impacto sostenible y habilitar el éxito de los demás.",
 
     // Skills Component
     skillsSectionTitle: "Especialidades Técnicas",
